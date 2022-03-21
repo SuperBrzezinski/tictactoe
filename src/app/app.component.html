@@ -1,2 +1,4 @@
-<app-hello-world></app-hello-world>
-
+<button *ngIf="this.state === 'beforeGame'" (click)="startGame()">START</button>
+<app-board *ngIf="this.state !== 'beforeGame'"></app-board>
+<h1 *ngIf="this.state === 'gameOverX' || this.state === 'gameOverY'" >{{ this.state === 'gameOverX' ? 'Wygrał krzyżyk!' : 'Wygrało kółko!' }}</h1>
+<button *ngIf="this.state === 'gameOverX' || this.state === 'gameOverY'" (click)="startGame()">PLAY AGAIN</button>
